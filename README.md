@@ -4,4 +4,5 @@ Semester Project for Data Bases course in ECE/NTUA.
 Summer 2024
 
 Authors: Fezos Konstantinos /
-         Arthouros-Rigas Odysseas
+         Arthouros-Rigas Odysseas /
+         Giorgos Giannakopoulos
