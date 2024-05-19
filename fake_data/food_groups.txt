@@ -1,0 +1,20 @@
+Fruits
+Vegetables
+Grains
+Protein Foods
+Dairy
+Nuts and Seeds
+Legumes
+Meat
+Poultry
+Seafood
+Eggs
+Desserts
+Beverages
+Herbs and Spices
+Condiments
+Breads and Baked Goods
+Pasta and Noodles
+Sauces
+Oils and Fats
+Snacks

@@ -1,0 +1,103 @@
+Spaghetti Carbonara
+Chicken Alfredo
+Beef Stroganoff
+Vegetable Stir-Fry
+Shrimp Scampi
+Eggplant Parmesan
+Mushroom Risotto
+Chicken Tikka Masala
+Lamb Rogan Josh
+Beef Bourguignon
+Chicken Cacciatore
+Fish Tacos
+Vegetable Lasagna
+Stuffed Bell Peppers
+Chicken Fajitas
+Beef Tacos
+Pork Carnitas
+Vegetable Curry
+Chicken Pad Thai
+Salmon Teriyaki
+Clam Chowder
+French Onion Soup
+Tomato Basil Soup
+Minestrone Soup
+Lentil Soup
+Butternut Squash Soup
+Gazpacho
+Chili Con Carne
+Vegetarian Chili
+Beef Stew
+Chicken Noodle Soup
+Pho
+Ramen
+Jambalaya
+Gumbo
+Paella
+Risotto Primavera
+Quiche Lorraine
+Spinach and Feta Quiche
+Frittata
+Omelette
+Huevos Rancheros
+Eggs Benedict
+Pancakes
+Waffles
+French Toast
+Crepes
+Banana Bread
+Blueberry Muffins
+Chocolate Chip Cookies
+Brownies
+Apple Pie
+Pumpkin Pie
+Lemon Meringue Pie
+Cheesecake
+Tiramisu
+Chocolate Cake
+Carrot Cake
+Red Velvet Cake
+Vanilla Cupcakes
+Pecan Pie
+Bread Pudding
+Rice Pudding
+Flan
+Panna Cotta
+Creme Brulee
+Chocolate Mousse
+Strawberry Shortcake
+Black Forest Cake
+Baked Alaska
+Fruit Salad
+Caesar Salad
+Greek Salad
+Caprese Salad
+Cobb Salad
+Waldorf Salad
+Potato Salad
+Coleslaw
+Macaroni Salad
+Tabbouleh
+Falafel
+Hummus
+Baba Ganoush
+Tzatziki
+Guacamole
+Salsa
+Bruschetta
+Garlic Bread
+Stuffed Mushrooms
+Deviled Eggs
+Chicken Wings
+Mozzarella Sticks
+Onion Rings
+Spring Rolls
+Dumplings
+Empanadas
+Samosas
+Quesadillas
+Nachos
+Burritos
+Enchiladas
+Tamales
+Fried Rice

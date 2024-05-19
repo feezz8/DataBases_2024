@@ -1,0 +1,102 @@
+Beverage
+Smoothie
+Juice
+Cocktail
+Mocktail
+Grain-Free
+Low-Fat
+High-Fiber
+Dinner Party
+Weeknight Dinner
+Sunday Brunch
+Game Day
+Potluck
+Holiday Dinner
+Christmas
+Thanksgiving
+Easter
+Halloween
+Valentine`s Day
+New Year`s Eve
+Wedding
+Bridal Shower
+Baby Shower
+Graduation Party
+Anniversary
+Picnic
+BBQ
+Tailgating
+Camping
+Backpacking
+Hiking
+Road Trip
+Beach Day
+Pool Party
+Movie Night
+Girls` Night
+Boys` Night
+Dorm Cooking
+Bachelor Cooking
+Bachelorette Cooking
+Sunday Meal Prep
+Fitness
+Post-Workout
+Pre-Workout
+Energy Boost
+Immune Boost
+Digestive Health
+Detox
+Hangover Cure
+Stress Relief
+Brain Food
+Quick & Easy
+Healthy
+Vegetarian
+Vegan
+Gluten-Free
+Low-Carb
+Keto-Friendly
+Budget-Friendly
+Family-Friendly
+Comfort Food
+One-Pot
+Meal Prep
+Dairy-Free
+Nut-Free
+Kid-Friendly
+Date Night
+Brunch
+Holiday
+Summer
+Winter
+Fall
+Spring
+Grilling
+Slow Cooker
+Instant Pot
+Paleo
+Whole30
+Mediterranean
+Asian
+Italian
+Mexican
+Indian
+Middle Eastern
+Low-Calorie
+High-Protein
+Seafood
+Salad
+Soup
+Stew
+Pasta
+Rice
+Casserole
+Dessert
+Appetizer
+Side Dish
+Snack
+Bread
+Cake
+Cookie
+
+
