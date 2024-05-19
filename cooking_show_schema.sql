@@ -1,4 +1,3 @@
-
 DROP TABLE IF EXISTS recipe_meal_type; 
 DROP TABLE IF EXISTS recipe_tag; 
 DROP TABLE IF EXISTS recipe_equipment; 
@@ -38,8 +37,8 @@ CREATE TABLE recipe(
     difficulty TINYINT NOT NULL,
     title VARCHAR(255) NOT NULL,
     recipe_description TEXT NOT NULL,
-    prep_time TIME NOT NULL,
-    cook_time TIME NOT NULL,
+    prep_time INT NOT NULL,
+    cook_time INT NOT NULL,
     portions SMALLINT NOT NULL,
     fat_portion SMALLINT NOT NULL,
     protein_portion SMALLINT NOT NULL,
@@ -88,7 +87,7 @@ CREATE TABLE tip(
 CREATE TABLE recipe_tip(
     recipe_id INT UNSIGNED NOT NULL,
     tip_id INT UNSIGNED NOT NULL,
-    PRIMARY KEY (recipe, tip_id),
+    PRIMARY KEY (recipe_id, tip_id),
     CONSTRAINT fk_recipe_tip_recipe FOREIGN KEY (recipe_id) REFERENCES recipe(recipe_id) ON UPDATE CASCADE
 );
 
@@ -183,7 +182,7 @@ CREATE TABLE cook(
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
     phone VARCHAR (10) NOT NULL,
-    d_birth DATE NOT NULL,
+    d_birth varchar(20) NOT NULL,
     age SMALLINT NOT NULL,
     exp_years SMALLINT NOT NULL,
     cook_role_id INT UNSIGNED NOT NULL,
