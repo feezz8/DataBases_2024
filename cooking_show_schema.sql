@@ -182,7 +182,7 @@ CREATE TABLE cook(
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
     phone VARCHAR (10) NOT NULL,
-    d_birth TEXT NOT NULL,
+    d_birth DATE NOT NULL,
     age SMALLINT NOT NULL,
     exp_years SMALLINT NOT NULL,
     cook_role_id INT UNSIGNED NOT NULL,
