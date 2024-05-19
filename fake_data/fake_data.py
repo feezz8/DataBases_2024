@@ -151,7 +151,7 @@ def fake_recipes_ingredients_cooks(f):
         picture_uri = fake.image_url()
         picture_description = fake.sentence()
         return f"INSERT INTO cook(first_name, last_name, phone, d_birth, age, exp_years, cook_role_id, picture, picture_description) VALUES\
-('{first_name}', '{last_name}', {phone}, {d_birth}, {age}, {experience}, {cook_role_id}, '{picture_uri}', '{picture_description}');\n"
+('{first_name}', '{last_name}', {phone}, '{d_birth}', {age}, {experience}, {cook_role_id}, '{picture_uri}', '{picture_description}');\n"
                    
     
     def build_food_group():
