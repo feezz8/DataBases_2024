@@ -187,8 +187,8 @@ def fake_recipes_ingredients_cooks(f):
         carbs_portion = random.randrange(0, 90, 5)
         picture_uri = fake.image_url()
         picture_description = fake.sentence()
-        tags = random.sample(range(1, N_TAG + 1), random.randint(1, 5))
-        equipments = random.sample(range(1, N_EQUIPMENT + 1), random.randint(1, 5))
+        tags = random.sample(range(1, N_TAG + 1), random.randint(1, 8))
+        equipments = random.sample(range(1, N_EQUIPMENT + 1), random.randint(3, 7))
         recipe_cooks = random.sample(range(1, N_COOKS + 1), random.randint(1, N_COOKS))
         themes = random.sample(range(1, N_THEME + 1), random.randint(1, 3))
         tips = random.sample(range(1, N_TIPS + 1), random.randint(1, 3))
@@ -256,11 +256,6 @@ def fake_recipes_ingredients_cooks(f):
     ingredients = (build_ingredient() for _ in range(1, N_INGREDIENTS + 1))
     recipes = (build_recipe(recipe_id) for recipe_id in range(1, N_RECIPES + 1))
     episodes = (build_episodes(episode_id) for episode_id in range(1, N_EPISODES + 1))
-    for recipe_id in range(1, N_RECIPES + 1):
-        for step_order in range(1, random.randint(7, 15)):
-            f.write(build_step_order(step_order, recipe_id))
-    f.write("\n")
-
     for cuisine in cuisines:
             f.write(f"INSERT INTO cuisine (title) VALUES ('{cuisine}');\n")
     f.write("\n")
@@ -318,6 +313,11 @@ def fake_recipes_ingredients_cooks(f):
 ({recipe_id}, {random.randint(1, N_INGREDIENTS)}, 1, NULL, 1);\n")
         build_recipe_ingredient(recipe_id)
         f.write("\n")
+    f.write("\n")
+
+    for recipe_id in range(1, N_RECIPES + 1):
+        for step_order in range(1, random.randint(7, 15)):
+            f.write(build_step_order(step_order, recipe_id))
     f.write("\n")
     
     for episode in episodes:
