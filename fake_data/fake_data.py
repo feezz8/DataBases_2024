@@ -6,8 +6,8 @@ from faker.providers import BaseProvider, ElementsType
 from datetime import date
 
 
-random.seed(42)
-faker.Faker.seed(42)
+random.seed(7)
+faker.Faker.seed(7)
 
 N_RECIPES = 100
 N_CUISINES = 50
@@ -142,26 +142,25 @@ def fake_recipes_ingredients_cooks(f):
     def build_cook():
         first_name = fake.first_name()
         last_name = fake.last_name()
-        phone = fake.basic_phone_number()
+        phone = fake.unique.numerify('69########')
         d_birth = fake.date_between_dates(date_start = START_DATE, date_end = END_DATE)
         year_born = d_birth.year
         age = 2018 - year_born
-        experience = random.randint(1, (age - 18))
-        cook_role_id = random.randint(1, 6)
+        experience = (random.randint(1, age - 17))
+        cook_role_id = random.randint(1, 5)
         picture_uri = fake.image_url()
         picture_description = fake.sentence()
-        return f"INSERT INTO cook(first_name, last_name, phone, d_birth, exp_years, cook_role_id, picture, picture_description) VALUES\
-('{first_name}', '{last_name}', {phone}, {d_birth}, {experience}, {cook_role_id}, '{picture_uri}', '{picture_description}');\n"
+        return f"INSERT INTO cook(first_name, last_name, phone, d_birth, age, exp_years, cook_role_id, picture, picture_description) VALUES\
+('{first_name}', '{last_name}', {phone}, {d_birth}, {age}, {experience}, {cook_role_id}, '{picture_uri}', '{picture_description}');\n"
                    
     
     def build_food_group():
         title = fake.foodgroups()
-        food_group_description = fake.paragraph(nb_sentences = 2)
         char_if_main = fake.food_group_char()
         picture_uri = fake.image_url()
         picture_description = fake.sentence()
-        return f"INSERT INTO food_group(title, food_group_description, char_if_main, picture, picture_description) VALUES\
-('{title}', '{food_group_description}', '{char_if_main}', '{picture_uri}', '{picture_description}');\n"
+        return f"INSERT INTO food_group(title, char_if_main, picture, picture_description) VALUES\
+('{title}', '{char_if_main}', '{picture_uri}', '{picture_description}');\n"
 
     def build_ingredient():
         ingredient_title = fake.ingredient()
@@ -192,7 +191,7 @@ def fake_recipes_ingredients_cooks(f):
         recipe_cooks = random.sample(range(1, N_COOKS + 1), random.randint(1, N_COOKS))
         themes = random.sample(range(1, N_THEME + 1), random.randint(1, 3))
         tips = random.sample(range(1, N_TIPS + 1), random.randint(1, 3))
-        return [f"INSERT INTO recipe(baking, cuisine_id, difficulty, recipe_title, recipe_description, prep_time, cook_time, portions, fat_portion, protein_portion, carbs_portion, picture_uri, picture_description) VALUES\
+        return [f"INSERT INTO recipe(baking, cuisine_id, difficulty, title, recipe_description, prep_time, cook_time, portions, fat_portion, protein_portion, carbo_portion, picture, picture_description) VALUES\
 ({baking}, {cuisine}, {difficulty},'{recipe_title}', '{recipe_decription}', {prep_time}, {cook_time}, {portions}, {fat_portion}, {protein_portion},\
 {carbs_portion}, '{picture_uri}', '{picture_description}');\n",\
             *[f"INSERT INTO recipe_meal_type(recipe_id, meal_type_id) VALUES ({recipe_id}, {random.randint(1, N_MEAL_TYPE)});\n"],\
@@ -204,10 +203,10 @@ def fake_recipes_ingredients_cooks(f):
      
     def build_step_order(step_order, recipe_id):
         details = fake.steps()
-        return f"INSERT INTO steps(recipe_id, step_order, details) VALUES ({recipe_id}, {step_order}, '{details}');\n"
+        return f"INSERT INTO step(recipe_id, step_order, details) VALUES ({recipe_id}, {step_order}, '{details}');\n"
     
     def build_episodes(episode_id):
-        year = FIRST_EPISODE + ( (episode_id //10) + 1)
+        year = FIRST_EPISODE + ((episode_id // 10) + 1)
         ep_num = (episode_id % 10) + 1
         picture = fake.image_url()
         picture_description = fake.sentence()
@@ -234,11 +233,6 @@ def fake_recipes_ingredients_cooks(f):
                 f.write(f"INSERT INTO recipe_ingredient(recipe_id, ingredient_id, quantity, recipe_ingredient_description, main) VALUES\
 ({recipe_id}, {ingredient_id}, NULL, '{description}', 0);\n")
                 
-            
-            
-
-        
-        
 
     cuisines = (fake.unique.country() for _ in range(N_CUISINES))
     meal_types = (fake.unique.meal_type() for _ in range(N_MEAL_TYPE))
@@ -255,7 +249,8 @@ def fake_recipes_ingredients_cooks(f):
     cooks = (build_cook() for _ in range(1, N_COOKS + 1))
     ingredients = (build_ingredient() for _ in range(1, N_INGREDIENTS + 1))
     recipes = (build_recipe(recipe_id) for recipe_id in range(1, N_RECIPES + 1))
-    episodes = (build_episodes(episode_id) for episode_id in range(1, N_EPISODES + 1))
+    episodes = (build_episodes(episode_id) for episode_id in range(0, N_EPISODES + 1))
+    
     for cuisine in cuisines:
             f.write(f"INSERT INTO cuisine (title) VALUES ('{cuisine}');\n")
     f.write("\n")
@@ -283,7 +278,7 @@ def fake_recipes_ingredients_cooks(f):
         equipment_detail = equipments_details[i]
         equipment_picture = equipments_pictures[i]
         equipment_picture_details = equipments_pictures_details[i]
-        f.write(f"INSERT INTO equipment (title, details, picture) VALUES\
+        f.write(f"INSERT INTO equipment (title, details, picture, picture_description) VALUES\
 ('{equipment}', '{equipment_detail}', '{equipment_picture}', '{equipment_picture_details}');\n")
     f.write("\n")
     
