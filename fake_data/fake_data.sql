@@ -286,7 +286,7 @@ INSERT INTO food_group(title, food_group_description, char_if_main, picture, pic
 INSERT INTO food_group(title, food_group_description, char_if_main, picture, picture_description) VALUES('Eggs', 'Rather spend mother long.', 'Vegeterian', 'https://placekitten.com/882/840', 'Theory near conference traditional.');
 INSERT INTO food_group(title, food_group_description, char_if_main, picture, picture_description) VALUES('Snacks', 'Right eat true and woman stay top.', 'Chiken-based', 'https://placekitten.com/1/43', 'College thousand field clear small return.');
 INSERT INTO food_group(title, food_group_description, char_if_main, picture, picture_description) VALUES('Dairy', 'Forward before space anyone party memory.', 'Soy-Based', 'https://dummyimage.com/811x881', 'Writer price huge born back.');
-INSERT INTO food_group(title, food_group_description, char_if_main, picture, picture_description) VALUES('Candy', 'Blind after honey anyone party memory.', 'Soy-Based', 'https://dummyimage.com/811x881', 'Writer price huge born back.');
+INSERT INTO food_group(title, food_group_description, char_if_main, picture, picture_description) VALUES('Candy', 'Blind after honey anyone party memory.', 'Gluten-free', 'https://fakeimage.com/8179x1081', 'Singer after huge placed there.');
 
 
 INSERT INTO cook(first_name, last_name, phone, d_birth, age, exp_years, cook_role_id, picture, picture_description) VALUES('Dana', 'Clark', 6928111663, '1980-02-24', NULL, 15, 5, 'https://dummyimage.com/131x570', 'Along change fill leg.');
