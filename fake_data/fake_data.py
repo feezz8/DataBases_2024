@@ -1,3 +1,4 @@
+
 import random
 import faker
 import itertools
@@ -94,8 +95,11 @@ def fake_recipes_ingredients_cooks(f):
         ]
         
         food_group_char_elements: ElementsType[str] = [
-            "Vegeterian", "Pesceterian", "Meat-Lovers", "Pork-based", "Chiken-based", "Vegan", "Soy-Based",
-            "Gluten-Free", "Spicy"
+            "Vegeterian", "Pesceterian", "Meat-Lovers", "Pork-based", "Chiken-based", "For vegans", "Soy-Based",
+            "Gluten-Free", "Spicy", "Keto", "Party-platters", "Spreadable and maintanable", "Kids will love it", "Low-calorie snacks",
+            "Water-based", "Milk-based", "Soups for the winter", "Full of protein and fats", "Nut-Based", "Perfect dinner-date", "Pasta-Lovers",
+             
+            
         ]
         quantity_elements: ElementsType[str] = [
             "ml", "gr", "Few", "A little", "NULL", "A pinch", "A cup", "A tablespoon of"
@@ -157,7 +161,7 @@ def fake_recipes_ingredients_cooks(f):
     def build_food_group():
         title = fake.unique.foodgroups()
         food_group_description = fake.unique.paragraph(nb_sentences = 2)
-        char_if_main = fake.food_group_char()
+        char_if_main = fake.unique.food_group_char()
         picture_uri = fake.image_url()
         picture_description = fake.sentence()
         return f"INSERT INTO food_group(title, food_group_description, char_if_main, picture, picture_description) VALUES\
@@ -305,7 +309,7 @@ def fake_recipes_ingredients_cooks(f):
     
     for recipe_id in range(1,  N_RECIPES + 1):
         f.write(f"INSERT INTO recipe_ingredient(recipe_id, ingredient_id, quantity, recipe_ingredient_description, main) VALUES\
-({recipe_id}, {random.randint(1, N_INGREDIENTS)}, 1, NULL, 1);\n")
+({recipe_id}, {random.randint(1, 299)}, 1, NULL, 1);\n")
         build_recipe_ingredient(recipe_id)
         f.write("\n")
     f.write("\n")
