@@ -6,8 +6,8 @@ from faker.providers import BaseProvider, ElementsType
 from datetime import date
 
 
-random.seed(12)
-faker.Faker.seed(12)
+random.seed(9)
+faker.Faker.seed(9)
 
 N_RECIPES = 100
 N_CUISINES = 50
@@ -211,11 +211,11 @@ def fake_recipes_ingredients_cooks(f):
         ep_num = (episode_id % 10) + 1
         picture = fake.image_url()
         picture_description = fake.sentence()
-        return f"INSERT INTO episode(year, ep_num, picture, picture_description) VALUES ({year}, {ep_num}, '{picture}', '{picture_description}');\n"
+        return f"INSERT INTO episode(season, ep_num, picture, picture_description) VALUES ({year}, {ep_num}, '{picture}', '{picture_description}');\n"
             
     def build_recipe_ingredient(recipe_id):
         for _ in range(random.randint(5, 15)):
-            ingredient_id = random.randint(1, N_INGREDIENTS)
+            ingredient_id = random.randint(1, 299)
             description = fake.quantity()
             if description == "NULL":
                 quantity = random.randint(2, 8)
