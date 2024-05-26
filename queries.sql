@@ -9,8 +9,8 @@ GROUP BY cu.cuisine_id, cu.title, c.cook_id, concat(c.first_name, ' ', c.last_na
 
 2.
 --First Create the views, Then run the select query
-DROP VIEW v1;
-DROP VIEW v2;
+DROP VIEW IF EXISTS v1;
+DROP VIEW IF EXISTS v2;
 
 CREATE VIEW v1 AS
 SELECT c.cook_id, c.first_name, c.last_name
@@ -30,6 +30,8 @@ WHERE e.season = '2022' AND cu.title = 'United Kingdom';
 --@block
 SELECT v1.cook_id, concat(v1.first_name, ' ', v1.last_name) AS cook_name, CASE WHEN v1.cook_id IN (SELECT v2.cook_id FROM v2) THEN "Participant" ELSE "Not Participant" END AS Participant_status
 FROM v1;
+DROP VIEW v1;
+DROP VIEW v2;
 
 
 3.
