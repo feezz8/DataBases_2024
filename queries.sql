@@ -228,7 +228,7 @@ WITH YearlyCuisineParticipations AS (
 )
 SELECT 
     c.cuisine_id,
-    c.title
+    c.title,
     c.title AS cuisine_name,
     cy1.season1,
     cy1.participation_count1,
