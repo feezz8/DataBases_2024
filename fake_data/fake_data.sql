@@ -14876,6 +14876,8 @@ INSERT INTO episode(season, ep_num, picture, picture_description) VALUES (2024, 
 
 INSERT INTO episode(season, ep_num, picture, picture_description) VALUES (2024, 10, 'https://picsum.photos/165/583', 'Power term eat form seek one central.');
 
-
+CALL insert_episode_selection;
+CALL insert_episode_judge;
+CALL insert_judge_rates_cook;
 
 
