@@ -78,7 +78,7 @@ INNER JOIN (
     SELECT cook_id, count(*) AS ep_count2
     FROM episode_judge
     GROUP BY cook_id
-) AS j2 ON j1.cook_id <> j2.cook_id
+) AS j2 ON j1.cook_id < j2.cook_id
 WHERE j1.ep_count1 = j2.ep_count2 AND j1.ep_count1 > 3;
 
 
