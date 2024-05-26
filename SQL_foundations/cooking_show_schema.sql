@@ -1,3 +1,4 @@
+
     DROP TABLE IF EXISTS recipe_meal_type; 
     DROP TABLE IF EXISTS recipe_tag; 
     DROP TABLE IF EXISTS recipe_equipment; 
@@ -81,6 +82,9 @@
         PRIMARY KEY (recipe_id, tag_id),    CONSTRAINT fk_recipe_tag_recipe FOREIGN KEY (recipe_id) REFERENCES recipe(recipe_id) ON UPDATE CASCADE,
         CONSTRAINT fk_recipe_tag_tag FOREIGN KEY (tag_id) REFERENCES tag(tag_id) ON UPDATE CASCADE
     );
+    
+    CREATE INDEX idx_recipe_tag_recipe_id ON recipe_tag(recipe_id);
+    CREATE INDEX idx_recipe_tag_tag_id ON recipe_tag(tag_id);
 
     CREATE TABLE tip(
         tip_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -114,6 +118,9 @@
         CONSTRAINT fk_recipe_equipment_recipe FOREIGN KEY (recipe_id) REFERENCES recipe(recipe_id) ON UPDATE CASCADE,
         CONSTRAINT fk_recipe_equipment_equipment FOREIGN KEY (equipment_id) REFERENCES equipment(equipment_id) ON UPDATE CASCADE
     );
+    
+    CREATE INDEX idx_recipe_equipment_recipe_id ON recipe_equipment(recipe_id);
+    CREATE INDEX idx_recipe_equipment_equipment_id ON recipe_equipment(equipment_id);
 
     CREATE TABLE step(
         step_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -123,6 +130,8 @@
         PRIMARY KEY (step_id),
         CONSTRAINT fk_step_recipe FOREIGN KEY (recipe_id) REFERENCES recipe (recipe_id) ON UPDATE CASCADE
     );
+
+    CREATE INDEX idx_step_recipe_id ON step(recipe_id);
 
     CREATE TABLE food_group(
         food_group_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -199,6 +208,9 @@
         CONSTRAINT fk_cook_cook_role FOREIGN KEY (cook_role_id) REFERENCES cook_role (cook_role_id) ON UPDATE CASCADE
     );
 
+    CREATE INDEX idx_first_name ON cook(first_name);
+    CREATE INDEX idx_last_name ON cook(last_name);
+
     CREATE TABLE recipe_cook(
         recipe_id INT UNSIGNED NOT NULL,
         cook_id INT UNSIGNED NOT NULL,
@@ -236,6 +248,8 @@
         CONSTRAINT fk_episode_selection_recipe FOREIGN KEY (recipe_id) REFERENCES recipe (recipe_id) ON UPDATE CASCADE
     );
 
+    CREATE INDEX idx_episode_selection_recipe_id ON episode_selection(recipe_id);
+
     CREATE TABLE episode_judge(
         episode_id INT UNSIGNED NOT NULL,
         cook_id INT UNSIGNED NOT NULL,
@@ -254,6 +268,8 @@
         CONSTRAINT fk_judge_rates_cook_judge FOREIGN KEY (judge_id) REFERENCES cook (cook_id) ON UPDATE CASCADE,
         CONSTRAINT fk_judge_rates_cook_cook FOREIGN KEY (cook_id) REFERENCES cook (cook_id) ON UPDATE CASCADE
     );
+
+    CREATE INDEX idx_judge_rates_cook_rating ON rating(judge_rates_cook);
 
     CREATE TABLE database_user(
         database_user_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
