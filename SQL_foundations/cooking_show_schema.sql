@@ -269,7 +269,7 @@
         CONSTRAINT fk_judge_rates_cook_cook FOREIGN KEY (cook_id) REFERENCES cook (cook_id) ON UPDATE CASCADE
     );
 
-    CREATE INDEX idx_judge_rates_cook_rating ON rating(judge_rates_cook);
+    CREATE INDEX idx_judge_rates_cook_rating ON judge_rates_cook(rating);
 
     CREATE TABLE database_user(
         database_user_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
