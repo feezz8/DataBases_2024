@@ -65,6 +65,20 @@ LEFT JOIN
 WHERE 
     ej.cook_id IS NULL;
 
+5.
+SELECT j1.cook_id, j2.cook_id, j2.ep_count2
+FROM (
+    SELECT cook_id, count(*) AS ep_count1
+    FROM episode_judge
+    GROUP BY cook_id
+) AS j1
+INNER JOIN (
+    SELECT cook_id, count(*) AS ep_count2
+    FROM episode_judge
+    GROUP BY cook_id
+) AS j2 ON j1.cook_id <> j2.cook_id
+WHERE j1.ep_count1 = j2.ep_count2 AND j1.ep_count1 > 3;
+
 
 6.
 WITH TagPairs AS (
