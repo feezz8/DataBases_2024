@@ -373,7 +373,7 @@ BEGIN
         SIGNAL SQLSTATE '45000'
         SET message_text = "Not valid episode number";
     END IF;
-    IF (SELECT count(*) FROM episode WHERE year = new.year and ep_num = new.ep_num) >= 1 THEN
+    IF (SELECT count(*) FROM episode WHERE season = new.season and ep_num = new.ep_num) >= 1 THEN
         SIGNAL SQLSTATE '45000'
         SET message_text = "This episode has already been added";
     END IF;
